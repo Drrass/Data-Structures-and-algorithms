@@ -1,0 +1,25 @@
+our task is to reverse an  array by using recursion
+
+#include <iostream>
+using namespace std;
+
+  void  rever(int st,int end,int arr[]){
+    if(st>=end)return;
+    swap(arr[st],arr[end]);
+    rever(st+1,end-1,arr);
+  }
+  
+  int main()
+  {
+    int n;
+    cin>>n;
+    int arr[n];
+    for(int i=0;i<n;i++){
+    cin>>arr[i];
+    }
+    rever(0,n-1,arr);
+    for(int i=0;i<n;i++){
+    cout<<arr[i];
+    }
+    return 0;
+}
