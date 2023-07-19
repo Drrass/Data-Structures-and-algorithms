@@ -1,0 +1,17 @@
+https://leetcode.com/problems/assign-cookies/
+class Solution {
+public:
+    int findContentChildren(vector<int>& children, vector<int>& cookie) {
+        sort(children.rbegin(),children.rend());
+        sort(cookie.rbegin(),cookie.rend());
+        int curr=0;
+        int count=0;
+        for(int i=0;i<children.size();i++){
+            if(curr<cookie.size() && cookie[curr]>=children[i]){
+                count++;
+                curr++;
+         }
+      }
+         return count;
+    }
+};
