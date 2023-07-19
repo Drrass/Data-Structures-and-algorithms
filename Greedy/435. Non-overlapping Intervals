@@ -1,0 +1,19 @@
+https://leetcode.com/problems/non-overlapping-intervals/
+class Solution {
+public:
+    int eraseOverlapIntervals(vector<vector<int>>& intervals) {
+        sort(intervals.begin(),intervals.end());
+        int previous=0,n=intervals.size(),ans=0;
+        for(int current=1;current<n;current++){
+            if(intervals[current][0]<intervals[previous][1]){
+                ans++;
+                 if(intervals[current][1]<=intervals[previous][1]){
+          previous=current;//[1][5],[3][4]then previous will become[3][4]
+            }
+            }else{
+                previous=current;
+            }
+        }
+        return ans;
+    }
+};
